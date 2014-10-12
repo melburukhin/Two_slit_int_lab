@@ -9,7 +9,7 @@
 
 \begin{document}
 
-\title{Double-Slit Experiment \LaTeX}
+\title{Double-Slit Experiment}
 % In a long title you can use \\ to force a line break at a certain location.
 
 \author{Yumeng Melody Cao}
@@ -31,14 +31,21 @@
 %____________abstract____________________________________________
 
 \begin{abstract}
-In this experiment we use a laser of wavelength 670nm to re-perform Young's Double-Slit Experiment which demonstrates the wave nature of light. The observed interference pattern is fitted using Fraunhofer model with a detailed calculating of Chi-Squared as an indication of the goodness of the fit, and is found to be consistent with the theory.
+%The motivation of this experiment originates from the interference of light waves caused by 
+%originated from that, this experiment we use the TWS apparatus with a laser of wavelength 670nm to re-perform Young's Double-Slit Experiment. 
+
+When two narrow beams of light at the same phase angle are projected on a screen, they interfere and create the fringes of light shown in Fig.\ref{image}. This phenomenon shows the wave nature of light. 
+%This experiment, also known as the Young$^\prime$s double-slit experiment, 
+Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern that was detected by a photodiode at the other end. 
+%The results and the plots in the experiment successfully demonstrated the wave nature of light. 
+The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57, both indicating that the data are consistent with the model within our estimate of uncertainty.
 \end{abstract}
 
 \begin{figure}[b]
 \centering
 \includegraphics[width=4in]{image1.jpg}
 \caption{Single and double-slit interference patterns \cite{wik}.}
-\includegraphics[width=4.5in]{white.png}
+\includegraphics[width=1in]{white.png}
 \label{image}
 \end{figure}
 
@@ -90,8 +97,15 @@ Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plo
 \begin{figure}[h]
 \centering
 \includegraphics[width=7in]{double.png}
-\caption{Plot of double-slit interference.}
+\caption{Plot of raw data, error bars and fit curve of the double-slit experiment. The y-axis is the voltage the photodiode outputs which is proportional to the intensity of light shining on it, and the x-axis is the angle away from the central maximum (Fig. \ref{interference}). The curve at the bottom of the graph shows the size of error as a function of angle.}
 \label{double}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{interference.png}
+\caption{Calculate angle from position \cite{interference}}
+\label{interference}
 \end{figure}
 
 \begin{table}[h]
@@ -101,12 +115,12 @@ Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plo
 \begin{tabular}{ l c c c}
 Name & Symbol & Value & Uncertainties($\pm$)\\
 \hline
-Slit width & a & 88.26 $\mu m$ & 0.384 $\mu m$\\
-Slit separation & d & 426.89 $\mu m$ & 0.066 $\mu m$\\
-Wavelength & $\lambda$ & 0.67 nm & 0\\
-Max voltage & $V_0$ & 4.5532 V & 0.066 V\\
-Voltage offset & $V_{offset}$ & 0.073317 V & 0.0075 V\\
-Theta offset &$ \theta_{offset}$ & 1E-05 rad & 7.57e-06 rad \\
+Slit width & a & 88.3 $\mu m$ & 0.4 $\mu m$\\
+Slit separation & d & 426.89 $\mu m$ & 0.07 $\mu m$\\
+Wavelength & $\lambda$ & 0.67 nm & N/A \\
+Max voltage & $V_0$ & 4.55 V & 0.07 V\\
+Voltage offset & $V_{offset}$ & 0.073 V & 0.008 V\\
+Theta offset &$ \theta_{offset}$ & 1E-05 rad & 8E-06 rad \\
 \hline
 Chi Squared & $X^2$ & 0.827068&
 \end{tabular}
@@ -125,7 +139,7 @@ I=I_0 sinc^2 (\frac{\pi a}{\lambda} sin\theta)
 \begin{figure}[h]
 \centering
 \includegraphics[width=6.6in]{single.png}
-\caption{Plot of single-slit interference.}
+\caption{Plot of raw data, error bars and fit curve of the single-slit experiment. The y-axis is still the output voltage of the photodiode, and the x-axis is the angle away from the central maximum.}
 \label{single}
 \end{figure}
 
@@ -138,14 +152,14 @@ Using plotting tools in Igor while applying Eq.\ref{eq2}, we can obtain the plot
 \begin{tabular}{ l c c c}
 Name & Symbol & Value & Uncertainties($\pm$)\\
 \hline
-Slit width & a & 88.008 $\mu m$ & 0.0954 $\mu m$\\
-Wavelength & $\lambda$ & 0.67 nm & 0\\
-Max voltage & $V_0$ & 1.3583 V & 0.00113 V\\
-Voltage offset & $V_{offset}$ &  V &  V\\
-Theta offset &$ \theta_{offset}$ & -05 rad & -06 rad \\
+Slit width & a & 93.9 $\mu m$ & 0.2 $\mu m$\\
+Wavelength & $\lambda$ & 0.67 nm & N/A \\
+Max voltage & $V_0$ & 1.350 V & 0.002 V\\
+Voltage offset & $V_{offset}$ &  0.004 V & 0.001 V\\
+Theta offset &$ \theta_{offset}$ & 1E-05 rad & 7E-06 rad \\
 
 \hline
-Chi Squared & $\chi^2$ & 2.44549&
+Chi Squared & $\chi^2$ & 1.56815 &
 \end{tabular}
 \end{ruledtabular}
 \label{data}
@@ -167,53 +181,78 @@ Several parameters are added to the original Fraunhofer model. $V_{offset}$ is d
 
 Some other parameters need fitting are slit width and slit separation. Due to manufacturing imperfection, the slit width and slit separation have slightly different values than given by the experiment manual. The wavelength of the laser might also be slightly off, but because equation m contains ratio terms $\frac{\pi a}{\lambda}$ and $\frac{\pi d}{\lambda}$, the numerator and denominator cannot change at the same time. Compared to a and d, $\lambda$ is less likely to have a greatly different value, so it is held at 0.67 $\mu m$. $V_{0}$ stands for the voltage measured at the central maximum.\\
 
-Uncertainty in the variable (angle $\theta$) is determined by applying error propagation. Each step of the detector-slit change is designed to be 0.05 mm on the micrometer, from $x_i = 0.15 mm$ to $x_f = 8.35 mm$. Angle $\theta$ corresponds to the position in radian is given by
+Uncertainty in the variable (angle $\theta$) is determined by applying error propagation. Each step of the detector-slit change is designed to be 0.05 mm on the micrometer, from $x_i = 0.15 mm$ to $x_f = 8.35 mm$. Angle $\theta$ corresponds to the position in radian (Fig. \ref{interference}) is given by
 \begin{equation}
 \theta = \frac{arctan(x-x_0)}{D}
 \label{theta}
 \end{equation}
 $D$ is the distance from the double-slit to the photodiode, is 50 cm given by the experiment manual.
-$x_0$ is found to be 4.3627 mm given by the Gaussian curve fit to the data set.
+$x_0$ is found to be $4.4 \pm 0.1mm$ given by the Gaussian curve fit to the data set.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=7in]{doublegaus.pdf}
-\caption{Gaussian curve fit of double-slit interference.}
+\caption{Gaussian curve fit of double-slit interference is made to find the position where the intensity/output voltage of the photodiode peaks.}
 \label{gasfit}
 \end{figure}
 
-However, due to human error, each step is not perfectly 0.05 mm, but $0.05\pm0.03 mm$.
-Then the error in angle is given by taking derivative of equation n and multiply theta prime by delta x, which is 0.03. 
-[theta prime equation]
-Delta theta is a function of position x. The same method of taking derivative could be applied to find the error in voltage, but it is rather messy. So a different approach is adopted to find delta V, which is to change theta in equation m by delta m and calculate the resulting change in V, which is then divided by 2.
-[delta V = abs (I(theta + delta theta) - I(theta - delta theta))/2]
-It can be seen that delta theta has a smaller impact on delta V when V prime is small, and a bigger impact when V prime is big.\\
+However, due to human error, each step is not perfectly $0.05 mm$, but $0.05\pm0.03 mm$.
+Then the error in angle is given by taking derivative of Eq. \ref{theta} and multiply $\theta^\prime$ by $\delta x$, which is $0.03 mm$. 
 
-The multimeter itself also contributes to the error in angle. We estimate the error in meter readings to be 0.05v.
-So the overall delta V is
-[delta V = abs (I(theta + delta theta) - I(theta - delta theta))/2 + 0.05v]
-Delta V is plotted as a function of angle in the figure.\\
+\begin{equation}
+\theta^\prime = \frac{1}{D(1+(x-x_0)^2)}
+\label{thetaprime}
+\end{equation}
 
-After the curve fitting, a chi squared evaluation is done, and yields a chi square of something, which is close to 1, meaning that the estimation for error is reasonable. \\
+\begin{equation}
+\delta\theta = \theta^\prime \delta x = \frac{\delta x}{D(1+(x-x_0)^2)}
+\label{deltatheta}
+\end{equation}
 
+$\delta\theta$ is a function of position x. The same method of taking derivative could be applied to find the error in voltage, but it is rather messy. So a different approach is adopted to find $\delta V$, which is to change $\theta$ in Eq. \ref{fitdouble} by $\delta\theta$ and calculate the resulting change in V, which is then divided by 2.
 
+\begin{equation}
+\delta V = \frac{\left| V(\theta+\delta\theta)-V(\theta-\delta\theta)\right |}{2}
+\label{deltav}
+\end{equation}
 
+It can be seen that the same $\delta\theta$ has a smaller impact on $\delta V$ when $V^\prime$ is small, and a bigger impact when $V^\prime$ is big.\\
 
+The multimeter itself also contributes to the error in angle. We estimate the error in meter readings to be $0.05v$.
+So the overall $\delta V$ is
+\begin{equation}
+\delta V_{total} = \delta V+\delta V_{meter} = \delta V + 0.05v
+\label{deltavtotal}
+\end{equation}
+$\delta V$ is plotted as a function of angle in Fig. \ref{double}.\\
+
+The reduced $\chi^2$ is calculated for the fit curve, yielding a value of 0.827. The value is close to 1, meaning that the fit is good within estimation of error. \\
 
 \subsection{Single-Slit Experiment}
 
-Section 2 Single-Slit Experiment
-The intensity of light as a function of theta in single-slit experiment is given by the Fraunhofer/Fresnel theory
-[I(theta) = equation]
-Parameters need fitting are slit width, slit separation, maximal voltage, offset in voltage due to background light, and offset in theta due to systematic error of position.
+The intensity of light as a function of $\theta$ in single-slit experiment is given by the Fraunhofer/Fresnel theory in Eq. \ref{eq2}, which can then be transformed as
+\begin{equation}
+V=V_0 cos^2(\frac{\pi d}{\lambda} sin (\theta+\theta_{offset})) + V_{offset}
+\label{fitsingle}
+\end{equation}
+Parameters need fitting are slit width $(a)$, slit separation $(d)$, maximal voltage $(V_0)$, offset in voltage $(V_{offset})$ due to background light, and offset in $\theta$ $(\theta_{offset})$ due to systematic error of position.\\
 
-Uncertainty is determined using the same method.
-[theta = arctan((x-x0)/distance)] {equation p}
-The position of the central maximum of the single-slit pattern is slightly shifted than that of the double-slit pattern, so a gaussian fit is added to the data to find out the offset in x.
-[figure]
-The distance is still 50 cm.
-Step size, delta x
+Uncertainty is determined using the same method. $\theta$ is found using Eq. \ref{theta} while x goes from $x_i = 0.15mm$ to $x_f = 7.7mm$ with a step size of $0.05mm$. However, the value of $x_0$ need re-calculating, since the single-slit pattern is slightly shifted than the double-slit pattern. A Gaussian fit is done to the data to determine $x_{offset}$, which is $4.327 \pm 0.003mm$.\\
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{singlegaus.png}
+\caption{Gaussian curve fit of single-slit diffraction is made to find the position where intensity/output voltage of the photodiode peaks.}
+\label{gasfit2}
+\end{figure}
+
+Distance remains as $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.
+
+The reduces $\chi^2$ is 1.56815, which is approximately 1, showing the fit is good within our estimate of error.
+
+\subsection{Comparison}
+
+Looking at parts A and B, we see that the the maximum voltage ($V_0$) for the double-slit is approximately 4 times the maximum voltage for the single-slit equation. This is because when two central maximums of the two slits are superposed, the amplitude doubles at the central maximum ($\theta = 0$). The intensity is proportional to the amplitude squared: $$I \propto A^2 \ \ \ \	4I \propto(2A)^2$$ This relationship is clearly shown in our experiment: $$\frac{V_{0,double}}{V_{0,single}}=\frac{A_{0,double}^2}{A_{0,single}^2} = \frac{4.55\pm 0.07}{1.350 \pm 0.002}=3.37 \pm 0.06 \approx4$$ As we can see, the Voltage  double slit quadrupled.
 
 
 
@@ -221,6 +260,7 @@ Step size, delta x
 %____________Conclusion____________________________________________
 \section{Conclusion}
 
+ The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57.
 
 
 \begin{acknowledgments}
@@ -236,6 +276,7 @@ We gratefully acknowledge Nathaneal Fortune and Dana Parsons, who helped with th
 />}.
 
 \bibitem{dia} TeachSpin Instructions Manual,\textit{Two-Slit interference, One Photon at a Time (TWS1-B), Pulse Counter/Interval Timer (PCIT1)}, 6/2013.
+\bibitem{interference} Young Two-Slit Experiment, \url{http://abyss.uoregon.edu/~js/21st_century_science/lectures/lec13.html}
 
 \end{thebibliography}
 
