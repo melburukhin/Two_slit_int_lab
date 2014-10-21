@@ -6,6 +6,7 @@
 \usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
 \usepackage{graphicx} % needed for figures
 \usepackage{tabularx}
+\usepackage{color}
 
 \begin{document}
 
@@ -39,6 +40,16 @@ When two narrow beams of light at the same phase angle are projected on a screen
 Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern that was detected by a photodiode at the other end. 
 %The results and the plots in the experiment successfully demonstrated the wave nature of light. 
 The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57, both indicating that the data are consistent with the model within our estimate of uncertainty.
+
+{\color{blue} comments on abstract
+\begin{enumerate}
+\item don't include references to figures (or figures) in abstract! Abstract needs to be able to ``stand alone.''  
+\item first statement isn't always true. The two beams of light need to have come from the same source, and be coherent. That is, there needs to be a definite and constant phase difference between the two (even if that difference is zero, and they are therefore in phase with each other). 
+\item first sentence is also misleading. It reads as is you are saying that the projection on the screen causes the interference, which certainly isn't true. The screen is how the variation in light intensity due to wave interference is detected, not how it is caused.  Physically, it is because the waves diffracting from each slit spread out, passing through each other. That leads to constructive and destructive interference (peak + peak = bigger peak, valley + valley = deeper valley, peak + valley = flat (null) node).  You should include a sentence or two discussing this, so that the reader can understand that the detected interference pattern provides evidence for the wave nature of light. 
+\item the photodiode measures light intensity, and hence can be used to measure variations in light intensity as a function of some other variable. It doesn't detect interference patterns directly. you had to select different parts of that pattern (by moving a slit across the detector) to detect the interference pattern. 
+\end{enumerate}
+}
+
 \end{abstract}
 
 \begin{figure}[b]
