@@ -7,10 +7,10 @@
 \usepackage{graphicx} % needed for figures
 \usepackage{tabularx}
 \usepackage{color}
-
+\DeclareMathOperator{\sinc}{sinc}
 \begin{document}
 
-\title{Double-Slit Experiment}
+\title{Double-Slit Experiment  ---need more exciting title here, relevant to physics that is demonstrated, particularly light as a wave}
 % In a long title you can use \\ to force a line break at a certain location.
 
 \author{Yumeng Melody Cao}
@@ -43,7 +43,7 @@ The observed interference pattern is fitted using Fraunhofer model, which descri
 
 {\color{blue} comments on abstract
 \begin{enumerate}
-\item don't include references to figures (or figures) in abstract! Abstract needs to be able to ``stand alone.''  
+\item don't include references to figures (or figures) in abstract! Abstract needs to be able to ``stand alone.''  You should move Figure 1 to the introduction. 
 \item first statement isn't always true. The two beams of light need to have come from the same source, and be coherent. That is, there needs to be a definite and constant phase difference between the two (even if that difference is zero, and they are therefore in phase with each other). 
 \item first sentence is also misleading. It reads as is you are saying that the projection on the screen causes the interference, which certainly isn't true. The screen is how the variation in light intensity due to wave interference is detected, not how it is caused.  Physically, it is because the waves diffracting from each slit spread out, passing through each other. That leads to constructive and destructive interference (peak + peak = bigger peak, valley + valley = deeper valley, peak + valley = flat (null) node).  You should include a sentence or two discussing this, so that the reader can understand that the detected interference pattern provides evidence for the wave nature of light. 
 \item the photodiode measures light intensity, and hence can be used to measure variations in light intensity as a function of some other variable. It doesn't detect interference patterns directly. you had to select different parts of that pattern (by moving a slit across the detector) to detect the interference pattern. 
@@ -112,7 +112,21 @@ I=I_0 sinc^2( \frac{\pi a}{\lambda} sin \theta)  cos^2(\frac{\pi d}{\lambda} sin
 \label{eq1}
 \end{equation}
 
-Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. Calculation of the error bars will be included in the discussion section.
+\textcolor{red}{there are special commands in LaTeX for trig functions. Please use them.}
+\begin{verbatim}
+  for example, use \sin{\theta} or \sin(\theta) or \sin{\left(d/\lambda\right)} 
+  rather than sin \theta
+\end{verbatim}
+\textcolor{red}{notice how much better the following looks:}
+\begin{equation*}
+I=I_0 \sinc^2{\left(\frac{\pi a}{\lambda}\sin{\theta}\right)}  \cos^2{\left(\frac{\pi d}{\lambda} \sin \theta\right)}
+\end{equation*}
+\textcolor{red}{where, since not everyone who is a likely reader of this report would know what sinc is, you should define }
+\begin{equation*}
+\sinc(\alpha) \equiv \frac{\sin(\alpha)}{\alpha}
+\end{equation*}
+
+Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. \textcolor{blue}{just plotting tools? you didn't also use a non-linear least squares curve fitting routing?} Calculation of the error bars will be included in the discussion section.
 
 \begin{figure}[h]
 \centering
@@ -130,7 +144,7 @@ Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plo
 
 \begin{table}[h]
 \centering
-\caption{Double-slit data}
+\caption{Double-slit data. \textcolor{red}{the variables a and d are missing from Figure 5, and in Figure 5 D is mislabeled as the length L from the slits to the detector instead of the distance d between the slits}}
 \begin{ruledtabular}
 \begin{tabular}{ l c c c}
 Name & Symbol & Value & Uncertainties($\pm$)\\
@@ -155,6 +169,7 @@ The Fraunhofer conditions can be applied once again to create  the curve of best
 I=I_0 sinc^2 (\frac{\pi a}{\lambda} sin\theta)
 \label{eq2}
 \end{equation}
+\textcolor{red}{see comments above regarding LaTeX commands for functions like sin and sinc, as well as use of larger parentheses}
 
 \begin{figure}[h]
 \centering
@@ -167,7 +182,7 @@ Using plotting tools in Igor while applying Eq.\ref{eq2}, we can obtain the plot
 
 \begin{table}[h]
 \centering
-\caption{Single-slit data}
+\caption{Single-slit data \textcolor{red}{the variable a is missing from Figure 5. You also haven't yet defined some terms such as the two offsets. To solve this, introduce equation (3) earlier and/or note in this caption that terms are defined in equation (3) and a corrected version of figure 5  }}
 \begin{ruledtabular}
 \begin{tabular}{ l c c c}
 Name & Symbol & Value & Uncertainties($\pm$)\\
@@ -215,8 +230,9 @@ $x_0$ is found to be $4.4 \pm 0.1mm$ given by the Gaussian curve fit to the data
 \caption{Gaussian curve fit of double-slit interference is made to find the position where the intensity/output voltage of the photodiode peaks.}
 \label{gasfit}
 \end{figure}
+\textcolor{blue}{I suggest using L instead of D, to avoid confusion with d}
 
-However, due to human error, each step is not perfectly $0.05 mm$, but $0.05\pm0.03 mm$.
+However, due to human error \textcolor{red}{in place of the vague and unhelpful term``human error'' explain precisely what source of the error, such as ``due to my lab partner hugging me each time I tried to advance the micrometer'' or ''the precision of the micrometer is limited to 0.025 mm'' or ``since we can only set the micrometer position with a precision of 0.025 mm'' or similar} , each step is not perfectly $0.05 mm$, but $0.05\pm0.03 mm$.
 Then the error in angle is given by taking derivative of Eq. \ref{theta} and multiply $\theta^\prime$ by $\delta x$, which is $0.03 mm$. 
 
 \begin{equation}
@@ -246,7 +262,7 @@ So the overall $\delta V$ is
 \end{equation}
 $\delta V$ is plotted as a function of angle in Fig. \ref{double}.\\
 
-The reduced $\chi^2$ is calculated for the fit curve, yielding a value of 0.827. The value is close to 1, meaning that the fit is good within estimation of error. \\
+The reduced $\chi^2$ is calculated for the fit curve, yielding a value of 0.827. The value is close to 1, meaning that the fit is good within estimation of error. \textcolor{blue}{and, more importantly, your results are well described by the Fraunhofer model for ? slit diffraction}. \\
 
 \subsection{Single-Slit Experiment}
 
@@ -266,13 +282,15 @@ Uncertainty is determined using the same method. $\theta$ is found using Eq. \re
 \label{gasfit2}
 \end{figure}
 
-Distance remains as $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.
+\textcolor{blue}{The slit to detector} Distance \textcolor{blue}{L} remains $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.
 
-The reduces $\chi^2$ is 1.56815, which is approximately 1, showing the fit is good within our estimate of error.
+The \textcolor{magenta}{reduces} $\chi^2$ is 1.56815, which is approximately 1, showing the fit is good within our estimate of error. \textcolor{blue}{not quite, but close. what is the probability that the model fits the data, if the reduced chi-square has a value of 1.6? Answer: if 6 or 7 degrees of freedom, then somewhere between 10 and 20 percent. See squires or http://www.pd.infn.it/~lunardon/didattica/docsper2/TavoleChi2.pdf , for example. You can see that there is a systematic error in Fig 8 between fit and data as position approaches zero and that the measured peak is slightly assymmetrical, perhaps because the traveling slit in front of the detector is slightly tilted?}. 
 
 \subsection{Comparison}
 
 Looking at parts A and B, we see that the the maximum voltage ($V_0$) for the double-slit is approximately 4 times the maximum voltage for the single-slit equation. This is because when two central maximums of the two slits are superposed, the amplitude doubles at the central maximum ($\theta = 0$). The intensity is proportional to the amplitude squared: $$I \propto A^2 \ \ \ \	4I \propto(2A)^2$$ This relationship is clearly shown in our experiment: $$\frac{V_{0,double}}{V_{0,single}}=\frac{A_{0,double}^2}{A_{0,single}^2} = \frac{4.55\pm 0.07}{1.350 \pm 0.002}=3.37 \pm 0.06 \approx4$$ As we can see, the Voltage  double slit quadrupled.
+
+\textcolor{red}{I don't think you can claim that a ratio of 3.37 clearly demonstrates that the signal quadrupled.  Perhaps the photodiode response is starting to saturate at high intensities, and is no longer linear near the central peak of the two-slit pattern? Perhaps the traveling slit in front of the detector is slightly tilted, and therefore smooths out and (lowers the max value) of the peaks? What you can definitely claim, however, is that you have shown that due to wave inteference, the combined waves have a maximum intensity that is greater than that which would be expected in the absence of wave interference. That is, 3.37 is significantly greater than 1 + 1, even if it is less than 4. } 
 
 
 
@@ -282,10 +300,12 @@ Looking at parts A and B, we see that the the maximum voltage ($V_0$) for the do
 
  The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57.
 
+\textcolor{blue}{need something here about how this demonstrates that light behaves as a wave (diffracting and interfering) rather than as a ray, as first demonstrated by Young} 
+
 
 \begin{acknowledgments}
 
-We gratefully acknowledge Nathaneal Fortune and Dana Parsons, who helped with the experimentation and editing of this experiment.  This work was supported by the Smith College Physics Department.
+We gratefully acknowledge \textcolor{magenta}{Nathaneal} Fortune and Dana Parsons, who helped with the experimentation and editing of this experiment.  This work was supported by the Smith College Physics Department.
 
 \end{acknowledgments}
 
