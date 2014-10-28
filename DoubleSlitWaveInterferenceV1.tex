@@ -218,10 +218,10 @@ Some other parameters need fitting are slit width and slit separation. Due to ma
 
 Uncertainty in the variable (angle $\theta$) is determined by applying error propagation. Each step of the detector-slit change is designed to be 0.05 mm on the micrometer, from $x_i = 0.15 mm$ to $x_f = 8.35 mm$. Angle $\theta$ corresponds to the position in radian (Fig. \ref{interference}) is given by
 \begin{equation}
-\theta = \frac{arctan(x-x_0)}{D}
+\theta = \frac{arctan(x-x_0)}{L}
 \label{theta}
 \end{equation}
-$D$ is the distance from the double-slit to the photodiode, is 50 cm given by the experiment manual.
+$L$ is the distance from the double-slit to the photodiode, is 50 cm given by the experiment manual.
 $x_0$ is found to be $4.4 \pm 0.1mm$ given by the Gaussian curve fit to the data set.
 
 \begin{figure}[h]
@@ -236,12 +236,12 @@ However, due to human error \textcolor{red}{in place of the vague and unhelpful 
 Then the error in angle is given by taking derivative of Eq. \ref{theta} and multiply $\theta^\prime$ by $\delta x$, which is $0.03 mm$. 
 
 \begin{equation}
-\theta^\prime = \frac{1}{D(1+(x-x_0)^2)}
+\theta^\prime = \frac{1}{L(1+(x-x_0)^2)}
 \label{thetaprime}
 \end{equation}
 
 \begin{equation}
-\delta\theta = \theta^\prime \delta x = \frac{\delta x}{D(1+(x-x_0)^2)}
+\delta\theta = \theta^\prime \delta x = \frac{\delta x}{L(1+(x-x_0)^2)}
 \label{deltatheta}
 \end{equation}
 
@@ -282,9 +282,9 @@ Uncertainty is determined using the same method. $\theta$ is found using Eq. \re
 \label{gasfit2}
 \end{figure}
 
-\textcolor{blue}{The slit to detector} Distance \textcolor{blue}{L} remains $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.
+The slit to detector distance L remains $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.
 
-The \textcolor{magenta}{reduces} $\chi^2$ is 1.56815, which is approximately 1, showing the fit is good within our estimate of error. \textcolor{blue}{not quite, but close. what is the probability that the model fits the data, if the reduced chi-square has a value of 1.6? Answer: if 6 or 7 degrees of freedom, then somewhere between 10 and 20 percent. See squires or http://www.pd.infn.it/~lunardon/didattica/docsper2/TavoleChi2.pdf , for example. You can see that there is a systematic error in Fig 8 between fit and data as position approaches zero and that the measured peak is slightly assymmetrical, perhaps because the traveling slit in front of the detector is slightly tilted?}. 
+The reduced $\chi^2$ is 1.56815, which is approximately 1, showing the fit is good within our estimate of error. \textcolor{blue}{not quite, but close. what is the probability that the model fits the data, if the reduced chi-square has a value of 1.6? Answer: if 6 or 7 degrees of freedom, then somewhere between 10 and 20 percent. See squires or http://www.pd.infn.it/~lunardon/didattica/docsper2/TavoleChi2.pdf , for example. You can see that there is a systematic error in Fig 8 between fit and data as position approaches zero and that the measured peak is slightly assymmetrical, perhaps because the traveling slit in front of the detector is slightly tilted?}. 
 
 \subsection{Comparison}
 
