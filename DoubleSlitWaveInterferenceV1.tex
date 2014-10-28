@@ -36,31 +36,28 @@
 %originated from that, this experiment we use the TWS apparatus with a laser of wavelength 670nm to re-perform Young's Double-Slit Experiment. 
 
 % shown in Fig.\ref{image}
-
-%When two narrow, in phase beams of light are projected on a screen, they interfere and create the fringes of light. 
-When a coherent laser beam passes through two narrow slits
-This phenomenon shows the wave nature of light. 
+When a coherent laser beam passes through two narrow slits, these two light beams of a constant phase difference will diffract from each slit and spread out passing through each other. This leads to constructive and destructive interference that can be detected on a screen at some distance from the slits. This phenomenon shows the wave nature of light. 
 %This experiment, also known as the Young$^\prime$s double-slit experiment, 
-Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern that was detected by a photodiode at the other end. 
+Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern. The photodiode at the other end measures the light intensity and by moving a slit across the detector, variations in light intensity can be used to infer the interference pattern. 
 %The results and the plots in the experiment successfully demonstrated the wave nature of light. 
 The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57, both indicating that the data are consistent with the model within our estimate of uncertainty.
 
-{\color{blue} comments on abstract
-\begin{enumerate}
+%{\color{blue} comments on abstract
+%\begin{enumerate}
 %\item don't include references to figures (or figures) in abstract! Abstract needs to be able to ``stand alone.''  You should move Figure 1 to the introduction. 
 %\item first statement isn't always true. The two beams of light need to have come from the same source, and be coherent. That is, there needs to be a definite and constant phase difference between the two (even if that difference is zero, and they are therefore in phase with each other). 
-\item first sentence is also misleading. It reads as is you are saying that the projection on the screen causes the interference, which certainly isn't true. The screen is how the variation in light intensity due to wave interference is detected, not how it is caused.  Physically, it is because the waves diffracting from each slit spread out, passing through each other. That leads to constructive and destructive interference (peak + peak = bigger peak, valley + valley = deeper valley, peak + valley = flat (null) node).  You should include a sentence or two discussing this, so that the reader can understand that the detected interference pattern provides evidence for the wave nature of light. 
-\item the photodiode measures light intensity, and hence can be used to measure variations in light intensity as a function of some other variable. It doesn't detect interference patterns directly. you had to select different parts of that pattern (by moving a slit across the detector) to detect the interference pattern. 
-\end{enumerate}
-}
+%\item first sentence is also misleading. It reads as is you are saying that the projection on the screen causes the interference, which certainly isn't true. The screen is how the variation in light intensity due to wave interference is detected, not how it is caused.  Physically, it is because the waves diffracting from each slit spread out, passing through each other. That leads to constructive and destructive interference (peak + peak = bigger peak, valley + valley = deeper valley, peak + valley = flat (null) node).  You should include a sentence or two discussing this, so that the reader can understand that the detected interference pattern provides evidence for the wave nature of light. 
+%\item the photodiode measures light intensity, and hence can be used to measure variations in light intensity as a function of some other variable. It doesn't detect interference patterns directly. you had to select different parts of that pattern (by moving a slit across the detector) to detect the interference pattern. 
+%\end{enumerate}
+%}
 
 \end{abstract}
 
 \begin{figure}[b]
 \centering
-\includegraphics[width=4in]{image1.jpg}
+\includegraphics[width=3in]{image1.jpg}
 \caption{Single and double-slit interference patterns \cite{wik}.}
-\includegraphics[width=1in]{white.png}
+%\includegraphics[width=1in]{white.png}
 \label{image}
 \end{figure}
 
@@ -81,7 +78,7 @@ Back in 1801, Thomas Young had difficulty with using common light sources, such 
 \textcolor{red}{I think this next paragraph about the TWS belongs in the Experiment section}
 
 
-Today, we can do the experiment by using the TWS \textcolor{red}{what is TWS?} apparatus that includes a monochromatic laser beam at one end (with a wavelength of 670 nm) passing through a double slit all encapsulated in a tightly sealed \textcolor{blue}{does this mean ``light-tight''?} u-channel. Adjusting the micrometer attached to the detector-slit allows you to gather information regarding the interference pattern that is projected to a photodiode at the other end of the u-channel. \textcolor{blue}{what detector slit? It needs defining. A bit wordy possibility --- you can do better --- might be `a slit that can be moved laterally across the detector to pick out individual maxima and minima in the interference pattern ...'}
+Today, we can do the experiment by using the TeachSpin's Two-Slit interference (TWS) apparatus that includes a monochromatic laser beam at one end (with a wavelength of 670 nm) passing through a double slit all encapsulated in a tightly sealed \textcolor{blue}{does this mean ``light-tight''?} u-channel. Adjusting the micrometer attached to the detector-slit allows you to gather information regarding the interference pattern that is projected to a photodiode at the other end of the u-channel. \textcolor{blue}{what detector slit? It needs defining. A bit wordy possibility --- you can do better --- might be `a slit that can be moved laterally across the detector to pick out individual maxima and minima in the interference pattern ...'}
 
 %____________Experiment____________________________________________
 \section{Experiment}
@@ -113,26 +110,21 @@ By changing the position of the detector-slit, intensity of the laser light is r
 
 The recorded raw data for the double and single-slit experiments are shown in Fig.\ref{ds}. First looking at the double slit experiment, to create the curve of best fit, the Fraunhofer equation is applied to the double-slit intensity: 
 
+%\begin{verbatim}
+%  for example, use \sin{\theta} or \sin(\theta) or \sin{\left(d/\lambda\right)} 
+%  rather than sin \theta
+%\end{verbatim}
+
 \begin{equation}
-I=I_0 sinc^2( \frac{\pi a}{\lambda} sin \theta)  cos^2(\frac{\pi d}{\lambda} sin \theta)
+I=I_0 \sinc^2{\left(\frac{\pi a}{\lambda}\sin{\theta}\right)}  \cos^2{\left(\frac{\pi d}{\lambda} \sin \theta\right)}
 \label{eq1}
 \end{equation}
-
-\textcolor{red}{there are special commands in LaTeX for trig functions. Please use them.}
-\begin{verbatim}
-  for example, use \sin{\theta} or \sin(\theta) or \sin{\left(d/\lambda\right)} 
-  rather than sin \theta
-\end{verbatim}
-\textcolor{red}{notice how much better the following looks:}
-\begin{equation*}
-I=I_0 \sinc^2{\left(\frac{\pi a}{\lambda}\sin{\theta}\right)}  \cos^2{\left(\frac{\pi d}{\lambda} \sin \theta\right)}
-\end{equation*}
-\textcolor{red}{where, since not everyone who is a likely reader of this report would know what sinc is, you should define }
+%\textcolor{red}{where, since not everyone who is a likely reader of this report would know what sinc is, you should define }
 \begin{equation*}
 \sinc(\alpha) \equiv \frac{\sin(\alpha)}{\alpha}
 \end{equation*}
 
-Using plotting tools in Igor while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. \textcolor{blue}{just plotting tools? you didn't also use a non-linear least squares curve fitting routing?} Calculation of the error bars will be included in the discussion section.
+Using plotting tools and a non-linear least squares curve fitting routing in Igor Pro while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. Calculation of the error bars will be included in the discussion section.
 
 \begin{figure}[h]
 \centering
@@ -172,10 +164,9 @@ Chi Squared & $X^2$ & 0.827068&
 
 The Fraunhofer conditions can be applied once again to create  the curve of best fit for the single-slit experiment: 
 \begin{equation}
-I=I_0 sinc^2 (\frac{\pi a}{\lambda} sin\theta)
+I=I_0 \sinc^2 \left(\frac{\pi a}{\lambda} \sin\theta \right)
 \label{eq2}
 \end{equation}
-\textcolor{red}{see comments above regarding LaTeX commands for functions like sin and sinc, as well as use of larger parentheses}
 
 \begin{figure}[h]
 \centering
@@ -188,7 +179,7 @@ Using plotting tools in Igor while applying Eq.\ref{eq2}, we can obtain the plot
 
 \begin{table}[h]
 \centering
-\caption{Single-slit data \textcolor{red}{the variable a is missing from Figure 5. You also haven't yet defined some terms such as the two offsets. To solve this, introduce equation (3) earlier and/or note in this caption that terms are defined in equation (3) and a corrected version of figure 5  }}
+\caption{Single-slit data (The definition for the two offsets will be introduced in Eq.\ref{fitdouble})}
 \begin{ruledtabular}
 \begin{tabular}{ l c c c}
 Name & Symbol & Value & Uncertainties($\pm$)\\
