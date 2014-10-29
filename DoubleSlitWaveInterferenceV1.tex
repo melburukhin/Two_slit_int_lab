@@ -67,21 +67,42 @@ The observed interference pattern is fitted using Fraunhofer model, which descri
 \section{Introduction}
 The double-slit experiment --- also known as the Young$^\prime$s experiment --- explores the wave-like nature of light. It is important in this experiment that the two sources of light are coherent and have a constant phase difference.
 %\textcolor{blue}{don't have to be same phase, but they do need to have a constant phase difference. Can still get an interference pattern if phase difference is $Pi/2$ instead of zero --- the pattern will just have all the double slit interference maxima and minima reversed!}. 
-Back in 1801, Thomas Young had difficulty with using common light sources, such as candles and lanterns, to be served as coherent sources of light. Thus instead, Young performed the experiment by filtering sunlight through a pinhole in a window shutter split by a piece of card and projecting it horizontally across the room. Light waves from either side of the card coming through the pinhole can be thus considered coherent sources and the interference pattern was then projected onto a screen from which the wavelength of the light source could be determined using Young$^\prime$s Equation: $$\lambda=\frac{y d}{m L}$$
+Back in 1801, Thomas Young had difficulty with using common light sources, such as candles and lanterns, to be served as coherent sources of light. Thus instead, Young performed the experiment by filtering sunlight through a pinhole in a window shutter split by a piece of card and projecting it horizontally across the room. Light waves from either side of the card coming through the pinhole can be thus considered coherent sources and the interference pattern was then projected onto a screen. (See Fig. \ref{interference})
 
-\textcolor{magenta}{This would be a good place to derive equations (1) and (2), since you introduce them without explanation later in your results and analysis section. Include text and a figure that defines your variables.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{interference.png}
+\caption{Calculate angle from position \cite{interference}. L being the distance between the slits and the photo diode($\approx50cm$); a being the slit width; d being the slit separation; x0 being the location reading on the detector slit micrometer at the central maximum; x being the location reading on the detector slit micrometer at different values to obtain the intensity at that distance from the central maximum; $\theta$ being the angle between the central maximum and value of x. How x is calculated is included in the discussion section. (Eq. \ref{theta}); }
+\label{interference}
+\end{figure}
 
-\textcolor{blue}{I'm not sure what the point of the equation above is, since it isn't the equation you use later, and is in fact just a small angle approximation replacing $\sin(\theta)$ with $\theta$. If you think it is helpful, however, then you need to define what the variables mean!  How will anyone know what $m$ or $d$ are?  YOu would also need a figure. It might be similar to your Figure (2) if you add lines indicating the meanings of $L$, $\theta$, and $y$ etc, or it might be similar to Figure (5), although that figure doesn't indicate what $m$ is and uses different variables from those in the above equation. For example, it has $D$ equal to what your formula calls $L$ instead of what your formula calls $d$.  } 
+First looking at the double slit experiment, to create the curve of best fit, the Fraunhofer equation is applied to the double-slit intensity: 
 
+\begin{equation}
+I=I_0 \sinc^2{\left(\frac{\pi a}{\lambda}\sin{\theta}\right)}  \cos^2{\left(\frac{\pi d}{\lambda} \sin \theta\right)}
+\label{eq1}
+\end{equation}
+%\textcolor{red}{where, since not everyone who is a likely reader of this report would know what sinc is, you should define }
+\begin{equation*}
+\sinc(\alpha) \equiv \frac{\sin(\alpha)}{\alpha}
+\end{equation*}
 
+The Fraunhofer conditions can be applied once again to create  the curve of best fit for the single-slit experiment: 
+\begin{equation}
+I=I_0 \sinc^2 \left(\frac{\pi a}{\lambda} \sin\theta \right)
+\label{eq2}
+\end{equation}
 
-\textcolor{red}{I think this next paragraph about the TWS belongs in the Experiment section}
+%\textcolor{magenta}{This would be a good place to derive equations (1) and (2), since you introduce them without explanation later in your results and analysis section. Include text and a figure that defines your variables.}
 
-
-Today, we can do the experiment by using the TeachSpin's Two-Slit interference (TWS) apparatus that includes a monochromatic laser beam at one end (with a wavelength of 670 nm) passing through a double slit all encapsulated in a tightly sealed \textcolor{blue}{does this mean ``light-tight''?} u-channel. Adjusting the micrometer attached to the detector-slit allows you to gather information regarding the interference pattern that is projected to a photodiode at the other end of the u-channel. \textcolor{blue}{what detector slit? It needs defining. A bit wordy possibility --- you can do better --- might be `a slit that can be moved laterally across the detector to pick out individual maxima and minima in the interference pattern ...'}
+%\textcolor{blue}{I'm not sure what the point of the equation above is, since it isn't the equation you use later, and is in fact just a small angle approximation replacing $\sin(\theta)$ with $\theta$. If you think it is helpful, however, then you need to define what the variables mean!  How will anyone know what $m$ or $d$ are?  YOu would also need a figure. It might be similar to your Figure (2) if you add lines indicating the meanings of $L$, $\theta$, and $y$ etc, or it might be similar to Figure (5), although that figure doesn't indicate what $m$ is and uses different variables from those in the above equation. For example, it has $D$ equal to what your formula calls $L$ instead of what your formula calls $d$.  } 
 
 %____________Experiment____________________________________________
 \section{Experiment}
+
+Today, we can do the experiment by using the TeachSpin's Two-Slit interference (TWS) apparatus that includes a monochromatic laser beam at one end (with a wavelength of 670 nm) passing through a double slit all encapsulated in a tightly sealed \textcolor{blue}{does this mean ``light-tight''?} u-channel. Adjusting the micrometer attached to the detector-slit allows you to gather information regarding the interference pattern that is projected to a photodiode at the other end of the u-channel. \textcolor{blue}{what detector slit? It needs defining. A bit wordy possibility --- you can do better --- might be `a slit that can be moved laterally across the detector to pick out individual maxima and minima in the interference pattern ...'}
+
+
 In this experiment, the apparatus is set up as shown in Fig. \ref{dia}. After precise alignment of the laser, the double-slit, the slit-blocker, and the detector-slit, the photodiode is connected to a multimeter which is ultimately connected to the computer. LabView is used to collect data first for the double-slit experiment and for the single-slit experiment. \\
 
 \begin{figure}[h!]
@@ -108,21 +129,7 @@ By changing the position of the detector-slit, intensity of the laser light is r
 
 \newpage
 
-The recorded raw data for the double and single-slit experiments are shown in Fig.\ref{ds}. First looking at the double slit experiment, to create the curve of best fit, the Fraunhofer equation is applied to the double-slit intensity: 
-
-%\begin{verbatim}
-%  for example, use \sin{\theta} or \sin(\theta) or \sin{\left(d/\lambda\right)} 
-%  rather than sin \theta
-%\end{verbatim}
-
-\begin{equation}
-I=I_0 \sinc^2{\left(\frac{\pi a}{\lambda}\sin{\theta}\right)}  \cos^2{\left(\frac{\pi d}{\lambda} \sin \theta\right)}
-\label{eq1}
-\end{equation}
-%\textcolor{red}{where, since not everyone who is a likely reader of this report would know what sinc is, you should define }
-\begin{equation*}
-\sinc(\alpha) \equiv \frac{\sin(\alpha)}{\alpha}
-\end{equation*}
+The recorded raw data for the double and single-slit experiments are shown in Fig.\ref{ds}. 
 
 Using plotting tools and a non-linear least squares curve fitting routing in Igor Pro while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. Calculation of the error bars will be included in the discussion section.
 
@@ -133,12 +140,6 @@ Using plotting tools and a non-linear least squares curve fitting routing in Igo
 \label{double}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=5in]{interference.png}
-\caption{Calculate angle from position \cite{interference}}
-\label{interference}
-\end{figure}
 
 \begin{table}[h]
 \centering
@@ -163,10 +164,6 @@ Chi Squared & $X^2$ & 0.827068&
 \newpage
 
 The Fraunhofer conditions can be applied once again to create  the curve of best fit for the single-slit experiment: 
-\begin{equation}
-I=I_0 \sinc^2 \left(\frac{\pi a}{\lambda} \sin\theta \right)
-\label{eq2}
-\end{equation}
 
 \begin{figure}[h]
 \centering
