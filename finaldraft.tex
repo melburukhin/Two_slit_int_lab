@@ -38,19 +38,19 @@
 % shown in Fig.\ref{image}
 When a coherent laser beam passes through two narrow slits, these two light beams of a constant phase difference will diffract from each slit and spread out passing through each other. This leads to constructive and destructive interference that can be detected on a screen at some distance from the slits. This phenomenon shows the wave nature of light. 
 %This experiment, also known as the Young$^\prime$s double-slit experiment, 
-Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern. The photodiode at the other end measures the light intensity and by moving a slit across the detector, variations in light intensity can be used to infer the interference pattern. 
+Originally done by Young back in 1800, the double-slit experiment was reproduced in this lab with the use of the TWS (TWo-Slit) apparatus with a laser of 670nm in wavelength. The monochromatic light beam was sent from one end of a u-channel through a double-slit to create an interference pattern. The photodiode at the other end measures the light intensity and by moving a slit across the detector, variations in light intensity can be used to infer the interference pattern. 
 %The results and the plots in the experiment successfully demonstrated the wave nature of light. 
 The observed interference pattern is fitted using Fraunhofer model, which describes far-field diffraction. The amplitude of the double-slit pattern was observed to be the modulated by the single slit diffraction pattern. Reduced $\chi^2$ of the double-slit fit curve is 0.827 and that of the single-slit fit curve is 1.57, both indicating that the data are consistent with the model within our estimate of uncertainty.
 
 \end{abstract}
 
-\begin{figure}[b]
+\begin{figure*}[b]
 \centering
 \includegraphics[width=3in]{image1.jpg}
 \caption{Single and double-slit interference patterns \cite{wik}.}
 %\includegraphics[width=1in]{white.png}
 \label{image}
-\end{figure}
+\end{figure*}
 
 \maketitle 
 
@@ -81,24 +81,33 @@ I=I_0 \sinc^2 \left(\frac{\pi a}{\lambda} \sin\theta \right)
 \label{eq2}
 \end{equation}
 
+Looking at the above equations, we can see that the single-slit equation is actually an integrated part of the double-slit. So we should expect to see the double-slit experiment to have the same overall shape with the central maximum at $\theta=0$ but modulated by the periodic function of $\cos ^2$. And of course, the two experiments will have different maximum intensities because the difference in slit number.
+
 %____________Experiment____________________________________________
 \section{Experiment}
 
-A TWS (TWo-Slit) apparatus (Fig. \ref{dia}) is used to perform this experiment. A monochromatics laser is fixed at one end of a U-channel, sending a laser beam with a wavelength of 670 nm through a double slit and the interference pattern is detected by a photodiode at the other end of the light-tight U-channel. Apart from the double-slit, a source-slit, a slit-blocker and a detector-slit are also installed in the U-channel. The source-slit is a single slit with a width narrower than the width of the laser beam, and is used to limit the intensity of the laser beam to decrease the possibility of saturating the detector. The slit-blocker is downstream to the double-slit, and is a wide single slit that can be moved using a micrometer outside the U-channel. The slit-blocker is wide enough to let both ribbons of light pass when it is centered, but it can also be moved to block one or both ribbons. The detector-slit is right in front of the photodiode. It is a narrow single slit, letting a narrow band of the interference pattern pass and detected by the photodiode. By moving the detector-slit through a micrometer outside the U-channel, the intensity of the interference pattern can be measured as a function of the position of the detector-slit x. The shutter at the photodiode end is kept closed to protect the PMT (PhotoMultiplier Tube) behind, which we didn?t use in this experiment. \\
-
-
-All parts are carefully aligned following the TeachSpin Instruction Manuals for two-slit interference. The laser beam is adjusted to aim directly down the center of the U-channel all the way to the detector, and the slits are adjusted to maximize the intensity of the interference pattern. The key positions of the slit-blocker where it blocks both ribbons of light, blocks one and lets both pass, are recorded. The photodiode is connected to a multimeter which is ultimately connected to the computer. LabView is used to collect data first for the double-slit experiment and for the single-slit experiment. \\
+A TWS (TWo-Slit) apparatus (Fig. \ref{dia}) is used to perform this experiment. A monochromatic laser fixed at one end of a U-channel produces a beam of wavelength 670 nm through a double slit.  The interference pattern is detected by a photodiode at the other end of the light-tight U-channel. \\
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=7in]{dia}
-\caption{Schematic of TWS apparatus - not to scale \cite{dia}.}
+\caption{Schematic of TWS apparatus - not to scale \cite{dia}. Components including the laser, slits and detector are explained in detail in this Experiment section.}
 \label{dia}
 \end{figure}
 
-After the preparation work, the double-slit experiment is first performed. A double-slit with slit width approximately 0.1 mm and slit separation 0.406 mm is chosen. The slit-blocker is set at the position, where light from both slits are allowed to pass. The photodiode outputs a voltage that is proportional to the intensity of the interference pattern. By changing the position of the detector-slit, intensity of the interference pattern is recorded by LabView as a function of location. Then the experiment is repeated for single-slit when the slit-blocker is moved to block light from one of the two slits. \\
+A source-slit, a slit-blocker and a detector-slit are also installed in the U-channel. The source-slit is a single slit with a width narrower than the width of the laser beam, and is used to limit the intensity of the laser beam to decrease the possibility of saturating the detector. The slit-blocker is downstream to the double-slit, and is a wide single slit that can be moved using a micrometer outside the U-channel. The slit-blocker is wide enough to let both ribbons of light pass when it is centered, but it can also be moved to block one or both ribbons. The detector-slit is right in front of the photodiode. It is a narrow single slit, letting a narrow band of the interference pattern pass and detected by the photodiode. By moving the detector-slit through a micrometer outside the U-channel, the intensity of the interference pattern can be measured as a function of the position of the detector-slit x. The shutter at the photodiode end is kept closed to protect the PMT (PhotoMultiplier Tube) behind, which we did not use in this experiment. \\
+
+
+All parts are carefully aligned following the TeachSpin Instruction Manuals for two-slit interference. The laser beam is adjusted to aim directly down the center of the U-channel all the way to the detector, and the slits are adjusted to maximize the intensity of the interference pattern. The key positions of the slit-blocker where it blocks both ribbons of light, blocks one and lets both pass, are recorded. The photodiode is connected to a multimeter which is ultimately connected to the computer. LabView is used to collect data first for the double-slit experiment and for the single-slit experiment. \\
+
+The double-slit has a slit width of approximately 0.1 mm and slit separation 0.406 mm. The slit-blocker is set at the position where light from both slits are allowed to pass. The photodiode outputs a voltage that is proportional to the intensity of the interference pattern. By changing the position of the detector-slit, intensity of the interference pattern is recorded by LabView as a function of location (x) on the detector-slit micrometer. Then the experiment is repeated for single-slit when the slit-blocker is moved to block light from one of the two slits. \\
+
+\newpage
 %____________Results____________________________________________
+
 \section{Results}
+
+The recorded raw data for the double and single-slit experiments are shown in Fig.\ref{ds}.  Here we see that the raw data contain values for the dependent variable of photodiode voltage which is proportional to the intensity, and the independent variable of the position indicated by the micrometer readings.
 
 \begin{figure}[h]
 \centering
@@ -108,16 +117,12 @@ After the preparation work, the double-slit experiment is first performed. A dou
 \label{ds}
 \end{figure}
 
-\newpage
-
-The recorded raw data for the double and single-slit experiments are shown in Fig.\ref{ds}. 
-
-Using plotting tools and a non-linear least squares curve fitting routing in Igor Pro while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. Calculation of the error bars will be included in the discussion section.
+Using plotting tools and a non-linear least squares curve fitting routing in Igor Pro while applying Eq. \ref{eq1}, we can obtain the plot shown below in Fig. \ref{double}. Calculation of the error bars will be included in the discussion section.\\
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=7in]{double.png}
-\caption{Plot of raw data, error bars and fit curve of the double-slit experiment. The y-axis is the voltage the photodiode outputs which is proportional to the intensity of light shining on it, and the x-axis is the angle away from the central maximum (Fig. \ref{interference}). The curve at the bottom of the graph shows the size of error as a function of angle.}
+\caption{Plot of data points, error bars and fit curve of the double-slit experiment. The y-axis is the voltage the photodiode outputs which is proportional to the intensity of light shining on it, and the x-axis is the angle away from the central maximum (Fig. \ref{interference}). The curve at the bottom of the graph shows the size of error as a function of angle.}
 \label{double}
 \end{figure}
 
@@ -142,20 +147,18 @@ Chi Squared & $X^2$ & 0.827068&
 \label{data}
 \end{table}
 
-\newpage
-
 The Fraunhofer conditions can be applied once again to create  the curve of best fit for the single-slit experiment: 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=6.6in]{single.png}
-\caption{Plot of raw data, error bars and fit curve of the single-slit experiment. The y-axis is still the output voltage of the photodiode, and the x-axis is the angle away from the central maximum.}
+\caption{Plot of data points, error bars and fit curve of the single-slit experiment. The y-axis is still the output voltage of the photodiode, and the x-axis is the angle away from the central maximum.}
 \label{single}
 \end{figure}
 
 Using plotting tools in Igor while applying Eq.\ref{eq2}, we can obtain the plot shown in Fig.\ref{single}. Calculation of the error bars will be once again included in the discussion section for the single slit experiment.
 
-\begin{table}[h]
+\begin{table}[h!!!!!!]
 \centering
 \caption{Single-slit data (The definition for the two offsets will be introduced in Eq.\ref{fitdouble})}
 \begin{ruledtabular}
@@ -180,7 +183,7 @@ Chi Squared & $\chi^2$ & 1.56815 &
 
 \subsection{Double-Slit Experiment}
 
-The Fraunhofer/Fresnel theory (Eq.\ref{eq1}) of interference gives the intensity of light as a function of angle. The photodiode we use to conduct the experiment outputs a voltage proportional to the intensity of light detected ($I = kV$), thus the intensity measurements can be replaced by the voltage readings and the analysis holds for both:
+The Fraunhofer theory (Eq.\ref{eq1}) of interference gives the intensity of light as a function of angle. The photodiode we use to conduct the experiment outputs a voltage proportional to the intensity of light detected ($I = kV$), thus the intensity measurements can be replaced by the voltage readings and the analysis holds for both:
 
 \begin{equation}
 V=V_0 \sinc^2( \frac{\pi a}{\lambda} \sin (\theta+\theta_{offset}))  \cos^2(\frac{\pi d}{\lambda} \sin (\theta+\theta_{offset}) + V_{offset}
@@ -257,7 +260,7 @@ Uncertainty is determined using the same method. $\theta$ is found using Eq. \re
 \label{gasfit2}
 \end{figure}
 
-The slit to detector distance L remains $50 cm$. Uncertainty in step size is also considered to be $0.03mm$, as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus a fluctuation of smaller scale in voltage.\\
+The slit to detector distance L remains $50 cm$. Uncertainty in step size also remains at $0.03mm$ as in the double-slit experiment. Eq. \ref{thetaprime}, \ref{deltatheta} and \ref{deltav} are used to determine uncertainty in voltage. In the final step of calculating $\delta V_{total}$ (Eq. \ref{deltavtotal}), $\delta V_{meter}$ is changed to $0.01v$, because the single-slit pattern has smaller intensity and thus smaller voltage uncertainty.\\
 
 The reduced $\chi^2$ is 1.56815, which indicates that if we were to redo the experiment, the possibility of getting a bigger mean values is around 0.15, given 5 degrees of freedom. This result shows that the peak position of the fit is slightly bigger than the peak position of the data. The plot confirms this, because the data points with angle smaller than 0 seem to have a systematic error, and the shape of the raw data curve is slightly skewed to the right. This error might be caused by the slit-block blocking one band of light imperfectly. But in the big picture, the data confirm the Fraunhofer model for single-slit diffraction.\\
 
@@ -273,7 +276,11 @@ The signal is not quite quadrupled, may be due to photodiode saturation or tilti
 %____________Conclusion____________________________________________
 \section{Conclusion}
 
-With $\chi^2$ values of 0.827 and 1.57, the observed interference patterns of double-slit and single-slit are consistent with the Fraunhofer model, which describes far-field diffraction. This result confirms that light is wave.
+Looking at the above results and discission, we can see that the double-slit diffraction pattern indeed seems to have the same overall shape of the single-slit diffraction pattern, with the central maximum at $\theta=0$, but modulated by the periodic function of $\cos ^2$. \\
+
+The double-slit experiment had a central maximum intensity that is $3.37\pm0.06$ times that of the single slit. Even though even considering the uncertainty, it does not fall in the range of 4, which is it's theoretical value, it is decently close and definitely proves a significantly greater central maximum intensity for the double slit.\\
+
+With $\chi^2$ values of 0.827 and 1.57, the observed interference patterns of double-slit and single-slit are consistent with the Fraunhofer model, which describes far-field diffraction. This result confirms that light is wave.\\
 
 
 \begin{acknowledgments}
